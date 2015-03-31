@@ -1,9 +1,8 @@
-var Keyboard = function()
-{
+var Keyboard = function() {
 	var self = this;
-
-	window.addEventListenter( 'keyDown' , function(evt) ( self.onKeyDown(evt);), false);
-	window.addEventListenter( 'keyUp' , function(evt) ( self.onKeyUp(evt);), false);
+	
+	window.addEventListener( 'keydown', function(evt) { self.onKeyDown(evt);}, false);
+	window.addEventListener( 'keyup', function(evt) { self.onKeyUp(evt);}, false);
 	
 	this.keyListeners = new Array();
 	this.keys = new Array();
@@ -11,7 +10,7 @@ var Keyboard = function()
 	this.KEY_SPACE = 32;
 	this.KEY_LEFT = 37;
 	this.KEY_UP = 38;
-	this.KEY_RIGHT = 39
+	this.KEY_RIGHT = 39;
 	this.KEY_DOWN = 40;
 	
 	this.KEY_A = 65;
@@ -19,12 +18,11 @@ var Keyboard = function()
 	this.KEY_S = 83;
 	this.KEY_W = 87;
 	this.KEY_SHIFT = 16;
-}
+};
 
 Keyboard.prototype.onKeyDown = function(evt)
 {
 	this.keys[evt.keyCode] = true;
-
 };
 
 Keyboard.prototype.onKeyUp = function(evt)
@@ -32,24 +30,12 @@ Keyboard.prototype.onKeyUp = function(evt)
 	this.keys[evt.keyCode] = false;
 };
 
-keyboard.prototype.isKeyDown = function(keyCode)
+Keyboard.prototype.isKeyDown = function(keyCode)
 {
 	return this.keys[keyCode];
-};	
+};
 
-
-
-
-
-
-
-
-
-
-
-
-Array.prototype.Get = function()
+Array.prototype.GetLength = function()
 {
-
-	return this.
-}	
+	return this.length;
+}
